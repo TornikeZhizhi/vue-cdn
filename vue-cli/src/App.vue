@@ -2,7 +2,12 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <Header-Section v-bind:Myname="name" @namewasreset="name = $event"></Header-Section>
+        <Header-Section
+          v-bind:Myname="name"
+          @namewasreset="name = $event"
+          v-bind:customFn="changeNameCustom"
+          v-bind:footerage="age"
+        ></Header-Section>
         <button @click="changeName">Change Name</button>
       </div>
     </div>
@@ -17,7 +22,7 @@
     <hr />
     <div class="row">
       <div class="col-xs-12">
-        <Footer-Section></Footer-Section>
+        <Footer-Section v-bind:footerage="age" @agewasedited="age = $event"></Footer-Section>
       </div>
     </div>
   </div>
@@ -31,12 +36,16 @@ import Lists from "./components/List.vue";
 export default {
   data: function() {
     return {
-      name: "max"
+      name: "max",
+      age: "28"
     };
   },
   methods: {
     changeName() {
       this.name = "anna";
+    },
+    changeNameCustom() {
+      this.name = "toke";
     }
   },
   components: {

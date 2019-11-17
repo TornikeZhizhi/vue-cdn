@@ -1,8 +1,10 @@
 <template>
   <div>
     <header>
-      <h1 @click="switchName">{{ status }} {{ Myname }}</h1>
+      <h1 @click="switchName">{{ status }} {{ Myname }} {{footerage}}</h1>
       <button @click="changename">H button</button>
+      <button @click="customFn">H button CUSTOM</button>
+      <button @click="customFn">H button CUSTOM</button>
     </header>
   </div>
 </template>
@@ -13,7 +15,9 @@ export default {
     Myname: {
       type: String,
       required: true
-    }
+    },
+    customFn: Function,
+    footerage: Number
   },
   data: function() {
     return {
