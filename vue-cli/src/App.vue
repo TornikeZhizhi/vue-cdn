@@ -7,16 +7,18 @@
           @namewasreset="name = $event"
           v-bind:customFn="changeNameCustom"
           v-bind:footerage="age"
+          v-bind:srvStatus="serverStatus"
+          @serverChanged="serverStatus = $event"
         ></Header-Section>
         <button @click="changeName">Change Name</button>
       </div>
     </div>
     <hr />
     <div class="row">
-      <List></List>
+      <List v-bind:srvStatus="serverStatus" @serverChanged="serverStatus = $event"></List>
 
       <div class="col-xs-12 col-sm-6">
-        <p>Server Details are currently not updated</p>
+        <p>Server status is {{serverStatus}}</p>
       </div>
     </div>
     <hr />
@@ -37,7 +39,8 @@ export default {
   data: function() {
     return {
       name: "max",
-      age: "28"
+      age: "28",
+      serverStatus: "default"
     };
   },
   methods: {

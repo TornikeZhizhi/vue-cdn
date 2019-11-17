@@ -4,7 +4,7 @@
       <h1 @click="switchName">{{ status }} {{ Myname }} {{footerage}}</h1>
       <button @click="changename">H button</button>
       <button @click="customFn">H button CUSTOM</button>
-      <button @click="customFn">H button CUSTOM</button>
+      <button @click="customFn">{{srvStatus}}</button>
     </header>
   </div>
 </template>
@@ -17,7 +17,8 @@ export default {
       required: true
     },
     customFn: Function,
-    footerage: Number
+    footerage: Number,
+    srvStatus: String
   },
   data: function() {
     return {
