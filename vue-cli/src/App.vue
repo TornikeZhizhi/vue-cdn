@@ -1,26 +1,28 @@
 <template>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-                <app-user></app-user>
-            </div>
-        </div>
-    </div>
+  <div>
+    <appHeader></appHeader>
+    <appBody></appBody>
+    <app-slider></app-slider>
+  </div>
 </template>
 
 <script>
-    import User from './components/User.vue';
+import Header from "./components/Header.vue";
+import Body from "./components/Body.vue";
+import Slider from "./components/Slider.vue";
 
-    export default {
-        components: {
-            appUser: User
-        }
-    }
+export default {
+  components: {
+    appHeader: Header,
+    appBody: Body,
+    appSlider: Slider
+  }
+};
 </script>
 
 <style>
-    div.component {
-        border: 1px solid black;
-        padding: 30px;
-    }
+div.component {
+  border: 1px solid black;
+  padding: 30px;
+}
 </style>
