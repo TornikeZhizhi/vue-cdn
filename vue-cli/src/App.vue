@@ -1,8 +1,10 @@
 <template>
   <div>
     <appHeader></appHeader>
-    <appBody></appBody>
     <app-slider></app-slider>
+    <appBus></appBus>
+    <appBody></appBody>
+    <appFooter></appFooter>
   </div>
 </template>
 
@@ -10,12 +12,16 @@
 import Header from "./components/Header.vue";
 import Body from "./components/Body.vue";
 import Slider from "./components/Slider.vue";
+import Footer from "./components/Footer.vue";
+import busComponent from "./components/busComponent/Parent.vue";
 
 export default {
   components: {
     appHeader: Header,
     appBody: Body,
-    appSlider: Slider
+    appSlider: Slider,
+    appFooter: Footer,
+    appBus: busComponent
   }
 };
 </script>

@@ -6,8 +6,8 @@
         :key="slide.id"
         :image="slide.image"
         :title="slide.title"
-        :content="slide.content"
         :link="slide.link"
+        :content="slide.content"
       ></vueper-slide>
     </vueper-slides>
   </div>
@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 .slider_fluid {
-  margin-top: 30px;
+  margin: 30px 0;
 }
 
 .vueperslides__bullet {

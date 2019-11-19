@@ -3,9 +3,9 @@ import App from "./App.vue";
 
 export const eventBus = new Vue({
   methods: {
-    changeAge(age, name) {
-      this.$emit("ageWasEdited", age);
-      this.$emit("nameWasEdited", name);
+    changeServerStatus(index, info) {
+      this.$emit("indexWasEdited", index);
+      this.$emit("infoWasEdited", info);
     }
   }
 });
