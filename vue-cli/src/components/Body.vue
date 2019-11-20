@@ -3,9 +3,7 @@
     <button
       @click="toggleSection = !toggleSection"
       v-bind:class="[{ red: toggleSection }, { green: !toggleSection }]"
-    >
-      Switch Fruit Section
-    </button>
+    >Switch Fruit Section</button>
     <div class="main_section" v-if="toggleSection">
       <div class="left_content">
         <div
@@ -36,38 +34,39 @@ export default {
       products: [
         {
           imgSource:
+            "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/diet_fruit_sugar_slideshow/493ss_thinkstock_rf_handful_ripe_dark_grapes.jpg",
+          productTittle: "მსხალი",
+          productText:
+            "მსხალი თესლი მდიდარია იოდით. ამიტომ ვაშლი კურკიანად უნდა მიირთვათ. 5-6 კურკა შეიცავს იოდზე ორგანიზმის სადღეღამისო მოთხოვნილების შესაბამის დოზას."
+        },
+        {
+          imgSource:
             "https://www.culturalindia.net/iliimages/National-Fruit-ili-71-img-7.jpg",
           productTittle: "ვაშლი",
           productText:
             "ვაშლის თესლი მდიდარია იოდით. ამიტომ ვაშლი კურკიანად უნდა მიირთვათ. 5-6 კურკა შეიცავს იოდზე ორგანიზმის სადღეღამისო მოთხოვნილების შესაბამის დოზას."
         },
+
         {
           imgSource:
-            "https://img.webmd.com/dtmcms/live/webmd/consumer_assets/site_images/articles/health_tools/diet_fruit_sugar_slideshow/493ss_thinkstock_rf_handful_ripe_dark_grapes.jpg",
-          productTittle: "მსხალი",
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRSvCgwW0IJHSpVNYGi6WGNJQ6E-mCEoxb1GHkck9P6zXfqOs&s",
+          productTittle: "ატამი2",
           productText:
-            "ვაშლის თესლი მდიდარია იოდით. ამიტომ ვაშლი კურკიანად უნდა მიირთვათ. 5-6 კურკა შეიცავს იოდზე ორგანიზმის სადღეღამისო მოთხოვნილების შესაბამის დოზას."
+            "ატამი თესლი მდიდარია იოდით. ამიტომ ვაშლი კურკიანად უნდა მიირთვათ. 5-6 კურკა შეიცავს იოდზე ორგანიზმის სადღეღამისო მოთხოვნილების შესაბამის დოზას."
         },
         {
           imgSource:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRSvCgwW0IJHSpVNYGi6WGNJQ6E-mCEoxb1GHkck9P6zXfqOs&s",
-          productTittle: "ატამი",
+          productTittle: "ატამი3",
           productText:
-            "ვაშლის თესლი მდიდარია იოდით. ამიტომ ვაშლი კურკიანად უნდა მიირთვათ. 5-6 კურკა შეიცავს იოდზე ორგანიზმის სადღეღამისო მოთხოვნილების შესაბამის დოზას."
-        },
-        {
-          imgSource:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRSvCgwW0IJHSpVNYGi6WGNJQ6E-mCEoxb1GHkck9P6zXfqOs&s",
-          productTittle: "ატამი",
-          productText:
-            "ვაშლის თესლი მდიდარია იოდით. ამიტომ ვაშლი კურკიანად უნდა მიირთვათ. 5-6 კურკა შეიცავს იოდზე ორგანიზმის სადღეღამისო მოთხოვნილების შესაბამის დოზას."
+            "ატამი თესლი მდიდარია იოდით. ამიტომ ვაშლი კურკიანად უნდა მიირთვათ. 5-6 კურკა შეიცავს იოდზე ორგანიზმის სადღეღამისო მოთხოვნილების შესაბამის დოზას."
         },
         {
           imgSource:
             "https://www.culturalindia.net/iliimages/National-Fruit-ili-71-img-7.jpg",
           productTittle: "ნესვი",
           productText:
-            "ვაშლის თესლი მდიდარია იოდით. ამიტომ ვაშლი კურკიანად უნდა მიირთვათ. 5-6 კურკა შეიცავს იოდზე ორგანიზმის სადღეღამისო მოთხოვნილების შესაბამის დოზას."
+            "ნესვი თესლი მდიდარია იოდით. ამიტომ ვაშლი კურკიანად უნდა მიირთვათ. 5-6 კურკა შეიცავს იოდზე ორგანიზმის სადღეღამისო მოთხოვნილების შესაბამის დოზას."
         }
       ],
       toggleSection: false,

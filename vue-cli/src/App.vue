@@ -2,6 +2,7 @@
   <div>
     <appHeader></appHeader>
     <app-slider></app-slider>
+    <appInputGame></appInputGame>
     <appBus></appBus>
     <appBody></appBody>
     <appFooter></appFooter>
@@ -10,6 +11,7 @@
 
 <script>
 import Header from "./components/Header.vue";
+import InputGame from "./components/gameComponent/InputGame.vue";
 import Body from "./components/Body.vue";
 import Slider from "./components/Slider.vue";
 import Footer from "./components/Footer.vue";
@@ -21,7 +23,8 @@ export default {
     appBody: Body,
     appSlider: Slider,
     appFooter: Footer,
-    appBus: busComponent
+    appBus: busComponent,
+    appInputGame: InputGame
   }
 };
 </script>
