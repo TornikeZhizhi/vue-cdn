@@ -24,7 +24,7 @@
         :key="index"
         v-bind:style="{ background: colors[value]}"
       >
-        <span ref="spanEl">{{colors[value]}}</span>
+        <span ref="spanEl" v-bind:style="{ filter: 'blur('+blurIndex +'px)'}">{{colors[value]}}</span>
       </div>
     </div>
     <div class="play_again" @click="resetGame">
@@ -45,6 +45,7 @@ export default {
       clickQuantity: 0,
       winnerColor: null,
       chanceIndex: 3,
+      blurIndex: 4,
       lostColor: "rgb(0, 0, 0)",
       clickColorForSpan: null,
       stopGame: true
@@ -54,6 +55,7 @@ export default {
   methods: {
     resetGame: function() {
       this.clickQuantity = 0;
+      this.blurIndex = 4;
       this.stopGame = true;
       this.colors = [];
       var winnerRandomIndex = Math.floor(Math.random() * 6);
@@ -71,6 +73,7 @@ export default {
       if (this.stopGame) {
         if (this.$refs.colorEl[arg].style.background !== this.lostColor) {
           this.clickQuantity++;
+          this.blurIndex--;
         }
 
         var globalThis = this;
@@ -176,11 +179,10 @@ export default {
   border-radius: 5px;
   opacity: 0;
   transition: all 0.4s;
-  filter: blur(3px);
 }
 .color_box:hover span {
   opacity: 1;
-  filter: blur(1px);
+  filter: blur(4px);
 }
 .color_fluid {
   display: flex;
