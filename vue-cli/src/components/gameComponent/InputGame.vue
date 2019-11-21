@@ -20,15 +20,25 @@
         class="color_box"
         ref="colorEl"
         @click="pickColor(value)"
-        v-for="(index,value) in 6"
+        v-for="(index,value) in colorbox"
         :key="index"
         v-bind:style="{ background: colors[value]}"
       >
         <span ref="spanEl" v-bind:style="{ filter: 'blur('+blurIndex +'px)'}">{{colors[value]}}</span>
       </div>
     </div>
-    <div class="play_again" @click="resetGame">
-      <span>Play Again</span>
+
+    <div class="gamesbutton">
+      <div class="eazygame" @click="easygame">
+        <span>Easy Game</span>
+      </div>
+      <div class="play_again" @click="resetGame">
+        <span>Play Again</span>
+      </div>
+
+      <div class="hardgame" @click="hardgame">
+        <span>Hard GAME</span>
+      </div>
     </div>
   </div>
 </template>
@@ -40,6 +50,9 @@ export default {
       colors: [],
       displayN: "none",
       displayB: "block",
+      easygameIndex: 6,
+      hardgameIndex: 9,
+      colorbox: 6,
       yourScore: 0,
       enemyScore: 0,
       clickQuantity: 0,
@@ -55,11 +68,11 @@ export default {
   methods: {
     resetGame: function() {
       this.clickQuantity = 0;
-      this.blurIndex = 4;
+      this.blurIndex = 5;
       this.stopGame = true;
       this.colors = [];
-      var winnerRandomIndex = Math.floor(Math.random() * 6);
-      for (var index = 0; index < 6; index++) {
+      var winnerRandomIndex = Math.floor(Math.random() * this.colorbox);
+      for (var index = 0; index < this.colorbox; index++) {
         var r = Math.floor(Math.random() * 255);
         var g = Math.floor(Math.random() * 255);
         var b = Math.floor(Math.random() * 255);
@@ -83,8 +96,9 @@ export default {
           this.$refs.colorEl[arg].style.background = this.lostColor;
           this.$refs.spanEl[arg].style.display = this.displayN;
           if (this.clickQuantity >= this.chanceIndex) {
-            for (var index = 0; index < 6; index++) {
+            for (var index = 0; index < this.colorbox; index++) {
               this.$refs.colorEl[index].style.background = this.lostColor;
+              this.$refs.spanEl[index].style.display = this.displayN;
             }
             this.stopGame = false;
             setTimeout(function() {
@@ -95,7 +109,7 @@ export default {
           }
         } else {
           this.yourScore++;
-          for (let index = 0; index < 6; index++) {
+          for (let index = 0; index < this.colorbox; index++) {
             this.$refs.spanEl[index].style.display = this.displayN;
             this.$refs.colorEl[index].style.background = this.winnerColor;
             this.stopGame = false;
@@ -105,13 +119,42 @@ export default {
           }
         }
       }
+    },
+    easygame: function() {
+      if (this.colorbox !== this.easygameIndex) {
+        this.resetHandler(this.easygameIndex, 3);
+      }
+    },
+    hardgame: function() {
+      if (this.colorbox !== this.hardgameIndex) {
+        this.resetHandler(this.hardgameIndex, 4);
+      }
+    },
+    resetHandler: function(boxArg, chanceARG) {
+      this.colorbox = boxArg;
+      this.chanceIndex = chanceARG;
+      this.enemyScore = 0;
+      this.yourScore = 0;
+      this.clickQuantity = 0;
+      this.blurIndex = 5;
+      this.stopGame = true;
+      this.colors = [];
+      var winnerRandomIndex = Math.floor(Math.random() * this.colorbox);
+      for (var index = 0; index < this.colorbox; index++) {
+        var r = Math.floor(Math.random() * 255);
+        var g = Math.floor(Math.random() * 255);
+        var b = Math.floor(Math.random() * 255);
+        var rgb = "rgb(" + r + ", " + g + ", " + b + ")";
+        this.colors.unshift(rgb);
+      }
+      this.winnerColor = this.colors[winnerRandomIndex];
     }
   },
   mounted: function() {
     this.colors = [];
-    var winnerRandomIndex = Math.floor(Math.random() * 6);
+    var winnerRandomIndex = Math.floor(Math.random() * this.colorbox);
 
-    for (var index = 0; index < 6; index++) {
+    for (var index = 0; index < this.colorbox; index++) {
       var r = Math.floor(Math.random() * 255);
       var g = Math.floor(Math.random() * 255);
       var b = Math.floor(Math.random() * 255);
@@ -130,11 +173,18 @@ export default {
   padding: 0px 10px 40px;
 }
 
-.play_again {
+.gamesbutton {
   text-align: center;
   color: #fff;
 }
-.play_again span {
+
+.gamesbutton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gamesbutton span {
   width: 200px;
   background-color: green;
   display: inline-block;
