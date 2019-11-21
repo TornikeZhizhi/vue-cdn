@@ -1,8 +1,9 @@
 <template>
   <div>
     <appHeader></appHeader>
-    <app-slider></app-slider>
+    <appQuote></appQuote>
     <appInputGame></appInputGame>
+    <app-slider></app-slider>
     <appBus></appBus>
     <appBody></appBody>
     <appFooter></appFooter>
@@ -11,6 +12,7 @@
 
 <script>
 import Header from "./components/Header.vue";
+import Quote from "./components/quotes/Quote.vue";
 import InputGame from "./components/gameComponent/InputGame.vue";
 import Body from "./components/Body.vue";
 import Slider from "./components/Slider.vue";
@@ -24,7 +26,8 @@ export default {
     appSlider: Slider,
     appFooter: Footer,
     appBus: busComponent,
-    appInputGame: InputGame
+    appInputGame: InputGame,
+    appQuote: Quote
   }
 };
 </script>
