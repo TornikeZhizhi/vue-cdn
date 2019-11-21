@@ -1,17 +1,17 @@
- <template>
+<template>
   <div class="main_inut">
     <div class="colorInfo">
       <h1>Color - GAME</h1>
       <h2>
         Find This Color -
-        <span>{{winnerColor}}</span>
+        <span>{{ winnerColor }}</span>
         You Have
-        <span>{{chanceIndex}}</span> Chance
+        <span>{{ chanceIndex }}</span> Chance
       </h2>
       <h3>
         You -
-        <span>{{yourScore}}</span> - Enemy -
-        <span>{{enemyScore}}</span>
+        <span>{{ yourScore }}</span> - Enemy -
+        <span>{{ enemyScore }}</span>
       </h3>
     </div>
 
@@ -20,11 +20,15 @@
         class="color_box"
         ref="colorEl"
         @click="pickColor(value)"
-        v-for="(index,value) in colorbox"
+        v-for="(index, value) in colorbox"
         :key="index"
-        v-bind:style="{ background: colors[value]}"
+        v-bind:style="{ background: colors[value] }"
       >
-        <span ref="spanEl" v-bind:style="{ filter: 'blur('+blurIndex +'px)'}">{{colors[value]}}</span>
+        <span
+          ref="spanEl"
+          v-bind:style="{ filter: 'blur(' + blurIndex + 'px)' }"
+          >{{ colors[value] }}</span
+        >
       </div>
     </div>
 

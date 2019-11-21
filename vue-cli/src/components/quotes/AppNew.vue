@@ -13,6 +13,12 @@ export default {
       numb: 0
     };
   },
+  deactivated: function() {
+    console.log("deactivated");
+  },
+  activated: function() {
+    console.log("activated");
+  },
   methods: {
     increase: function() {
       this.numb++;

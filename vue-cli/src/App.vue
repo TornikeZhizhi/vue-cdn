@@ -1,6 +1,7 @@
 <template>
   <div>
     <appHeader></appHeader>
+    <appQuoteChallange></appQuoteChallange>
     <appQuote></appQuote>
     <appInputGame></appInputGame>
     <app-slider></app-slider>
@@ -12,6 +13,7 @@
 
 <script>
 import Header from "./components/Header.vue";
+import QuoteGame from "./components/QuoteGame/QuoteGame.vue";
 import Quote from "./components/quotes/Quote.vue";
 import InputGame from "./components/gameComponent/InputGame.vue";
 import Body from "./components/Body.vue";
@@ -27,7 +29,9 @@ export default {
     appFooter: Footer,
     appBus: busComponent,
     appInputGame: InputGame,
-    appQuote: Quote
+    appQuote: Quote,
+
+    appQuoteChallange: QuoteGame
   }
 };
 </script>
