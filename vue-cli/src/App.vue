@@ -1,6 +1,7 @@
 <template>
   <div>
     <appHeader></appHeader>
+    <appMaxQuote></appMaxQuote>
     <appQuoteChallange></appQuoteChallange>
     <appQuote></appQuote>
     <appInputGame></appInputGame>
@@ -13,6 +14,7 @@
 
 <script>
 import Header from "./components/Header.vue";
+import MaxQuote from "./components/MaximQuotes/ParentQuote.vue";
 import QuoteGame from "./components/QuoteGame/QuoteGame.vue";
 import Quote from "./components/quotes/Quote.vue";
 import InputGame from "./components/gameComponent/InputGame.vue";
@@ -30,7 +32,7 @@ export default {
     appBus: busComponent,
     appInputGame: InputGame,
     appQuote: Quote,
-
+    appMaxQuote: MaxQuote,
     appQuoteChallange: QuoteGame
   }
 };
