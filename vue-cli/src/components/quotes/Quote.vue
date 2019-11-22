@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button @click="selectedComponent = 'appQuotesibling'">Quote</button>
+    <button @click="selectedComponent = 'appAuthor'">Quote</button>
     <button @click="selectedComponent = 'appAuthor'">Author</button>
     <button @click="selectedComponent = 'appNew'">New</button>
     <keep-alive>
@@ -16,17 +16,15 @@
 </template>
 
 <script>
-import QuoteSibling from "./QuoteSibling.vue";
 import Author from "./AppAuthor.vue";
 import New from "./AppNew.vue";
 export default {
   data: function(params) {
     return {
-      selectedComponent: "appQuotesibling"
+      selectedComponent: "appAuthor"
     };
   },
   components: {
-    appQuotesibling: QuoteSibling,
     appAuthor: Author,
     appNew: New
   }

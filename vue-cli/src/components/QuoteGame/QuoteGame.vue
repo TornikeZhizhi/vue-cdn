@@ -23,11 +23,11 @@
 
     <div class="blog_box">
       <div
-        @click="deleteBox(value)"
-        v-for="(index, value) in text.length"
-        :key="index"
+        @click="deleteBox(index)"
+        v-for="(value, index) in text.length"
+        :key="value"
       >
-        <p>{{ text[value] }}</p>
+        <p>{{ text[index] }}</p>
       </div>
     </div>
   </div>
@@ -38,6 +38,7 @@ export default {
   data: function() {
     return {
       progresIndex: 0,
+      limit: 10,
       text: [],
       boxIndex: 0,
       stopAdd: true
@@ -45,24 +46,23 @@ export default {
   },
   methods: {
     clickHandler: function(event) {
-      if (this.stopAdd) {
+      if (
+        this.progresIndex !== this.limit &&
+        this.$refs.textArea.value.replace(/\s+/g, "").length !== 0
+      ) {
         this.progresIndex++;
         var textAreaValue = this.$refs.textArea.value;
         this.text.unshift(textAreaValue);
         this.boxIndex++;
         this.$refs.textArea.value = "";
-        if (this.progresIndex == 10) {
-          this.stopAdd = !this.stopAdd;
-        }
       }
     },
     deleteBox: function(arg) {
-      this.text.splice(arg, 1);
-      this.progresIndex--;
-      console.log(this.text);
-      if (this.progresIndex < 10) {
+      if (this.progresIndex < this.limit) {
         this.stopAdd = true;
       }
+      this.text.splice(arg, 1);
+      this.progresIndex--;
     }
   }
 };
@@ -80,6 +80,9 @@ export default {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  font-family: "Dancing Script", cursive;
+  font-weight: bold;
+  font-size: 21px;
 }
 .blog_box div {
   margin-bottom: 20px;
