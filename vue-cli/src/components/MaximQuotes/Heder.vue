@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div>{{ progresCount.length }} - {{ progresLimit }}</div>
+    <div>{{ progresCount.length }} - {{ progresLimit }} {{ test }}</div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["progresLimit", "progresCount"]
+  props: ["progresLimit", "progresCount", "test"]
 };
 </script>
 
