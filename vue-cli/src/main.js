@@ -1,6 +1,16 @@
 import Vue from "vue";
 import App from "./App.vue";
 
+Vue.filter("globalLowecase", function(value) {
+  return value.toLowerCase();
+});
+
+Vue.mixin({
+  created() {
+    // console.log("global mixin");
+  }
+});
+
 Vue.directive("highlight", {
   bind(el, binding, vmode) {
     // el.style.background = binding.value;
