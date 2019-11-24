@@ -2,6 +2,7 @@
   <div>
     <appHeader></appHeader>
     <!-- <appMaxQuote></appMaxQuote> -->
+    <app-directive></app-directive>
     <app-forms></app-forms>
     <appQuoteChallange></appQuoteChallange>
     <appQuote></appQuote>
@@ -24,6 +25,7 @@ import Slider from "./components/Slider.vue";
 import Footer from "./components/Footer.vue";
 import busComponent from "./components/busComponent/Parent.vue";
 import Forms from "./components/FormsAndInputs/Forms.vue";
+import Directive from "./components/directives/Directive.vue";
 
 export default {
   components: {
@@ -36,7 +38,8 @@ export default {
     appQuote: Quote,
     appMaxQuote: MaxQuote,
     appQuoteChallange: QuoteGame,
-    appForms: Forms
+    appForms: Forms,
+    appDirective: Directive
   }
 };
 </script>
