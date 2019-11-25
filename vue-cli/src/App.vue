@@ -1,17 +1,19 @@
 <template>
   <div>
     <appHeader></appHeader>
+    <app-d-f-f></app-d-f-f>
     <appFilterex></appFilterex>
+    <!-- <app-forms></app-forms> -->
     <!-- <appFilters></appFilters> -->
     <!-- <appMaxQuote></appMaxQuote> -->
     <!-- <app-directive></app-directive>
-    <app-forms></app-forms>
+    
     <appQuoteChallange></appQuoteChallange>
     <appQuote></appQuote>
     <appInputGame></appInputGame>
     <app-slider></app-slider>
     <appBus></appBus>
-    <appBody></appBody> -->
+    <appBody></appBody>-->
     <appFooter></appFooter>
   </div>
 </template>
@@ -30,10 +32,12 @@ import Footer from "./components/Footer.vue";
 import busComponent from "./components/busComponent/Parent.vue";
 import Forms from "./components/FormsAndInputs/Forms.vue";
 import Directive from "./components/directives/Directive.vue";
+import Dff from "./components/DirectiveFilterMixinFormGame/DFF.vue";
 
 export default {
   components: {
     appHeader: Header,
+    appDFF: Dff,
     appFilterex: ExFilter,
     appFilters: Filters,
     appBody: Body,

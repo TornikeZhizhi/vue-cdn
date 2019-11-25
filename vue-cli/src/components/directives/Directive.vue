@@ -6,14 +6,10 @@
         mainColor: 'orange',
         mainBgColor: 'green'
       }"
-    >
-      Local Directive
-    </p>
+    >Local Directive</p>
     <h1 v-customOn:click="test2">clikc directive</h1>
 
-    <div v-customOn:mouseenter="mouseEnter" v-customOn:mouseleave="mouseLeave">
-      mouseneter and leave
-    </div>
+    <div v-customOn:mouseenter="mouseEnter" v-customOn:mouseleave="mouseLeave">mouseneter and leave</div>
   </div>
 </template>
 
