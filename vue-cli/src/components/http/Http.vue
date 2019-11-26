@@ -52,10 +52,10 @@ export default {
         .then(data => {
           const resultArray = [];
           console.log(data);
-          //   resultArray.push(data);
-          for (let key in data) {
-            resultArray.push(data[key]);
-          }
+          resultArray.push(data);
+          //   for (let key in data) {
+          //     resultArray.push(data[key]);
+          //   }
           this.users = resultArray;
         });
     }
