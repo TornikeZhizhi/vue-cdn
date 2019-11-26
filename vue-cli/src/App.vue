@@ -1,6 +1,8 @@
 <template>
   <div>
     <appHeader></appHeader>
+    <appHttp></appHttp>
+    <!-- <app-animation></app-animation> -->
     <app-d-f-f></app-d-f-f>
     <appFilterex></appFilterex>
     <!-- <app-forms></app-forms> -->
@@ -20,6 +22,8 @@
 
 <script>
 import Header from "./components/Header.vue";
+import Http from "./components/http/Http.vue";
+import Animation from "./components/animation/Animation.vue";
 import ExFilter from "./components/FiltereMixins/mixinPractice/Filter.vue";
 import Filters from "./components/FiltereMixins/Filters.vue";
 import MaxQuote from "./components/MaximQuotes/ParentQuote.vue";
@@ -36,7 +40,9 @@ import Dff from "./components/DirectiveFilterMixinFormGame/DFF.vue";
 
 export default {
   components: {
+    appHttp: Http,
     appHeader: Header,
+    appAnimation: Animation,
     appDFF: Dff,
     appFilterex: ExFilter,
     appFilters: Filters,
