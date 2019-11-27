@@ -1,5 +1,6 @@
 <template>
   <div class="main">
+    <appTestHttp></appTestHttp>
     <div class="form-group">
       <label for="">username</label>
       <input v-model="user.username" class="form-control" type="text" />
@@ -21,6 +22,7 @@
 </template>
 
 <script>
+import TestHtpp from "./HttpTest.vue";
 export default {
   data: function() {
     return {
@@ -31,41 +33,44 @@ export default {
       users: []
     };
   },
-  methods: {
-    submit() {
-      this.$http.post("", this.user).then(
-        response => {
-          // console.log(response);
-        },
-        error => {
-          // console.log(error);
-        }
-      );
-    },
-    fetchData() {
-      this.$http
-        .get("")
-        .then(response => {
-          return response.json();
-          console.log(response.json());
-        })
-        .then(data => {
-          const resultArray = [];
-          console.log(data);
-          //   resultArray.push(data);
-          for (let key in data) {
-            resultArray.push(data[key]);
-          }
-          this.users = resultArray;
-        });
-    }
+  //   methods: {
+  //     submit() {
+  //       this.$http.post("", this.user).then(
+  //         response => {
+  //           // console.log(response);
+  //         },
+  //         error => {
+  //           // console.log(error);
+  //         }
+  //       );
+  //     },
+  //     fetchData() {
+  //       this.$http
+  //         .get("")
+  //         .then(response => {
+  //           return response.json();
+  //           console.log(response.json());
+  //         })
+  //         .then(data => {
+  //           const resultArray = [];
+  //           //   console.log(data);
+  //           //   resultArray.push(data);
+  //           for (let key in data) {
+  //             resultArray.push(data[key]);
+  //           }
+  //           this.users = resultArray;
+  //         });
+  //     }
+  //   },
+  components: {
+    appTestHttp: TestHtpp
   }
 };
 </script>
 
 <style scoped>
 .main {
-  max-width: 700px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 </style>
