@@ -11,15 +11,13 @@
         <h6>{{ data.title }}</h6>
       </div>
     </div>
-
-    <div class="main_img_box">
-      <img alt="" :src="rightInfo.img" />
-      <h4>{{ rightInfo.title }}</h4>
-    </div>
+    <appHttpRight :imgTitle="rightInfo"></appHttpRight>
   </div>
 </template>
 
 <script>
+import HtppRight from "./HttpRight.vue";
+
 export default {
   data: function() {
     return {
@@ -39,17 +37,23 @@ export default {
       })
       .then(data => {
         console.log(data);
-        for (let index = 0; index < 10; index++) {
+        for (let index = 0; index < 12; index++) {
           this.imgarray.push(data[index]);
         }
+
+        this.rightInfo.img = this.imgarray[0].url;
+        this.rightInfo.title = this.imgarray[0].title;
       });
   },
   methods: {
     clickHandler(arg) {
-      console.log(this.imgarray[arg].url);
+      console.log(this.imgarray[arg].url, "2");
       this.rightInfo.img = this.imgarray[arg].url;
       this.rightInfo.title = this.imgarray[arg].title;
     }
+  },
+  components: {
+    appHttpRight: HtppRight
   }
 };
 </script>

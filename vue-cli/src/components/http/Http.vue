@@ -9,7 +9,7 @@
       <label for="">mail</label>
       <input v-model="user.mail" class="form-control" type="text" />
     </div>
-    <button class="btn btn-primary" @click.prevent="submit">Submit</button>
+    <button class="btn btn-primary" @click="submit">Submit</button>
     <hr />
     <button class="btn btn-primary" @click="fetchData">Get Data</button>
 
@@ -33,35 +33,35 @@ export default {
       users: []
     };
   },
-  //   methods: {
-  //     submit() {
-  //       this.$http.post("", this.user).then(
-  //         response => {
-  //           // console.log(response);
-  //         },
-  //         error => {
-  //           // console.log(error);
-  //         }
-  //       );
-  //     },
-  //     fetchData() {
-  //       this.$http
-  //         .get("")
-  //         .then(response => {
-  //           return response.json();
-  //           console.log(response.json());
-  //         })
-  //         .then(data => {
-  //           const resultArray = [];
-  //           //   console.log(data);
-  //           //   resultArray.push(data);
-  //           for (let key in data) {
-  //             resultArray.push(data[key]);
-  //           }
-  //           this.users = resultArray;
-  //         });
-  //     }
-  //   },
+  methods: {
+    submit() {
+      this.$http.post("", this.user).then(
+        response => {
+          console.log(response);
+        },
+        error => {
+          // console.log(error);
+        }
+      );
+    },
+    fetchData() {
+      this.$http
+        .get("")
+        .then(response => {
+          return response.json();
+          console.log(response.json());
+        })
+        .then(data => {
+          const resultArray = [];
+          //   console.log(data);
+          //   resultArray.push(data);
+          for (let key in data) {
+            resultArray.push(data[key]);
+          }
+          this.users = resultArray;
+        });
+    }
+  },
   components: {
     appTestHttp: TestHtpp
   }
