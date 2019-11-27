@@ -1,7 +1,15 @@
 import Vue from "vue";
 import App from "./App.vue";
-
+import VueRouter from "vue-router";
 import VueResource from "vue-resource";
+import { routes } from "./route";
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  routes,
+  mode: "history"
+});
 
 Vue.use(VueResource);
 Vue.http.options.root = "https://vue-http-9f266.firebaseio.com/data.json";
@@ -54,5 +62,6 @@ export const eventBus = new Vue({
 
 new Vue({
   el: "#app",
+  router,
   render: h => h(App)
 });

@@ -1,10 +1,10 @@
 <template>
   <div>
-    <appHeader></appHeader>
-    <appHttp></appHttp>
+    <!-- <appHeader></appHeader>
+    <appHttp></appHttp> -->
     <!-- <app-animation></app-animation> -->
-    <app-d-f-f></app-d-f-f>
-    <appFilterex></appFilterex>
+    <!-- <app-d-f-f></app-d-f-f>
+    <appFilterex></appFilterex> -->
     <!-- <app-forms></app-forms> -->
     <!-- <appFilters></appFilters> -->
     <!-- <appMaxQuote></appMaxQuote> -->
@@ -16,11 +16,14 @@
     <app-slider></app-slider>
     <appBus></appBus>
     <appBody></appBody>-->
-    <appFooter></appFooter>
+    <!-- <appFooter></appFooter> -->
+    <appRouterHeader></appRouterHeader>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
+import RouteHeader from "./components/routes/Header";
 import Header from "./components/Header.vue";
 import Http from "./components/http/Http.vue";
 import Animation from "./components/animation/Animation.vue";
@@ -41,6 +44,7 @@ import Dff from "./components/DirectiveFilterMixinFormGame/DFF.vue";
 export default {
   components: {
     appHttp: Http,
+    appRouterHeader: RouteHeader,
     appHeader: Header,
     appAnimation: Animation,
     appDFF: Dff,

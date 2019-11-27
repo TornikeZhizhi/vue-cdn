@@ -13,7 +13,7 @@ export default {
   data: function() {
     return {
       navigation: [
-        { link: "www.google.com", navName: "Home" },
+        { link: "/user", navName: "Home" },
         { link: "www.google2.com", navName: "About" },
         { link: "www.google3.com", navName: "Gallery" },
         { link: "www.google3.com", navName: "Products" },
