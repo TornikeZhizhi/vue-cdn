@@ -6,8 +6,12 @@
           <a>home</a>
         </router-link>
 
-        <router-link to="/user/10" tag="li" active-class="active">
-          <a>user</a></router-link
+        <router-link to="/user/1" tag="li" active-class="active">
+          <a>user1</a></router-link
+        >
+
+        <router-link to="/user/2" tag="li" active-class="active">
+          <a>user2</a></router-link
         >
       </ul>
     </div>
