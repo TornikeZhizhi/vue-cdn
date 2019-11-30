@@ -17,8 +17,10 @@
     <appBus></appBus>
     <appBody></appBody>-->
     <!-- <appFooter></appFooter> -->
-    <appRouterHeader></appRouterHeader>
+    <!-- <appRouterHeader></appRouterHeader> -->
+    <router-view name="header-top"></router-view>
     <router-view></router-view>
+    <router-view name="header-bottom"></router-view>
   </div>
 </template>
 

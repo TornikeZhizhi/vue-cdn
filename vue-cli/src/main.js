@@ -11,6 +11,12 @@ const router = new VueRouter({
   mode: "history"
 });
 
+router.beforeEach((to, from, next) => {
+  console.log("before0");
+
+  next();
+});
+
 Vue.use(VueResource);
 Vue.http.options.root = "https://vue-http-9f266.firebaseio.com/data.json";
 // Vue.http.interceptors.push((request, next) => {
